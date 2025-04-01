@@ -4,6 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
 }
 
 
@@ -23,11 +24,13 @@ body, html {
   z-index: -1;
 }
 
+
+
 /* Left side styling */
-.login-left {
+.login-left, .login-right {
+  height: 100%;
   background-size: cover;
   background-position: center;
-  height: 100vh;
   position: relative;
 }
 
@@ -56,8 +59,11 @@ body, html {
 .login-card {
   background: linear-gradient(135deg, #4169aa 0%, #11284d 100%);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  height: 50vh!important;
-  margin-top: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  margin-top: -10px!important;
 }
 
 #card-title{
@@ -67,11 +73,7 @@ body, html {
   padding: 50px 50px 30px 50px;
 }
 
-.logo{
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-}
+
 
 #p-title{
   color: var(--light) !important;
@@ -122,10 +124,10 @@ a {
 .login-card-f{
   background: linear-gradient(135deg, #4169aa 0%, #11284d 100%);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  height: 50vh!important;
+  height: 100%;
   margin-top: 20px;
   top: 10px;
-  left: 760px;
+  left: 500px;
 }
 
 
@@ -232,13 +234,58 @@ a {
 }
 
 
-@media (width: 414px) {
+/* Media Queries for 414px width */
+@media (max-width: 414px) {
+  .login-card{
+    height: auto !important;
+    margin-top: 20px;
+    width: 90% !important;
+    box-shadow: none;
+    top: 50px !important;
+  }
+
+
+
   .login-card-f {
     height: auto;
     margin-top: 20px;
-    width: 70% !important;
+    width: 90% !important;
     box-shadow: none;
-    top: 60px !important;
-    left: 65px !important;
+    top: 50px !important;
+    left: 5% !important; 
+  }
+
+  .logo-f {
+    width: 150px; 
+    height: 120px;
+    margin: 0 auto; 
+  }
+
+  #card-title-f {
+    font-size: 20px; 
+    padding: 15px;
+  }
+
+  #p-title {
+    font-size: 12px; 
+    padding-bottom: 15px;
+  }
+
+  input, button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .login-overlay {
+    padding: 10px; 
+  }
+
+  #remember-me + label,
+  a {
+    font-size: 12px;
+  }
+
+  .back {
+    font-size: 12px; 
   }
 }

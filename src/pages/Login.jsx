@@ -12,7 +12,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Login attempt with:", { email, password, rememberMe });
-    // Add your login logic here
   };
 
   return (
@@ -23,7 +22,7 @@ const Login = () => {
           <div className="text-center">
             <img src="/images/omni_logo_white.png" alt="Logo" className="logo" />
           </div>
-          <Card className="login-card" style={{ width: "100%", maxWidth: "400px", margin: "0 20px", marginLeft: "20px" }}>
+          <Card className="login-card" >
             <Card.Body className="card-body">
               <Card.Title id="card-title">Login</Card.Title>
               <Card.Subtitle className="mb-2 text-muted" id="p-title">
@@ -71,13 +70,14 @@ const Login = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col lg={6} className="login-left d-none d-lg-block">
+        <Col lg={6} className="login-left  d-lg-block ">
           <div
             style={{
               backgroundImage: "url(/images/170A1053.JPG)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               height: "100vh",
+              width: "100%",
             }}
             className="login-overlay"
           >
