@@ -1,17 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import ParticlesBackground, { defaultParticlesOptions } from "../components/Particles";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Card, Col, Container, Row } from "react-bootstrap";
+import ParticlesBackground, { defaultParticlesOptions } from "../components/Particles";
 import "../App.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Login attempt with:", { email, password, rememberMe });
+
+    // for login credentials testing purposes only
+    if (email === "admin@example.com" && password === "muzadmin12_") {
+      console.log("Admin logged in");
+      navigate("/admin-dashboard"); 
+    } else {
+      console.log("Invalid credentials");
+      alert("Invalid email or password");
+    }
   };
 
   return (
@@ -22,7 +31,7 @@ const Login = () => {
           <div className="text-center">
             <img src="/images/omni_logo_white.png" alt="Logo" className="logo" />
           </div>
-          <Card className="login-card" >
+          <Card className="login-card">
             <Card.Body className="card-body">
               <Card.Title id="card-title">Login</Card.Title>
               <Card.Subtitle className="mb-2 text-muted" id="p-title">
@@ -65,12 +74,12 @@ const Login = () => {
                 </Button>
               </Form>
               <Card.Text className="text-center mt-2">
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <a href="/forgot-password">Forgot Password?</a>
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
-        <Col lg={6} className="login-left  d-lg-block ">
+        <Col lg={6} className="login-left d-lg-block">
           <div
             style={{
               backgroundImage: "url(/images/170A1053.JPG)",
@@ -81,7 +90,7 @@ const Login = () => {
             }}
             className="login-overlay"
           >
-            <div className="login-overlay-text">{/* Add any text or branding you want on the left side */}</div>
+            <div className="login-overlay-text"></div>
           </div>
         </Col>
       </Row>

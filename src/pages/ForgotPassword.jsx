@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const handleForgotPassword = (e) => {
     e.preventDefault();
     console.log("Forgot password request for:", email);
-    // Add your forgot password logic here
+   
   };
 
   return (
