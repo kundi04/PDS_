@@ -44,7 +44,7 @@ const Navbar = ({ toggleSidebar }) => {
             <img src="https://github.com/shadcn.png" alt="HR Pic" className="rounded-circle" width={40} height={40} />
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Header>My Account</Dropdown.Header>
+            <Dropdown.Header>My Accnt</Dropdown.Header>
             <Dropdown.Item>
               <User className="me-2" size={18} /> Profile
             </Dropdown.Item>
