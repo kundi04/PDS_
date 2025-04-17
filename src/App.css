@@ -308,11 +308,10 @@ a {
 
 /* Admin Dashboard Styles */
 .dashboard-container {
-  padding: 20px ;
-  /* margin-top: -320px; */
+  padding: 20px;
   background-color: var(--light);
   height: 100%;
-  /* left: 200px!important; */
+  transition: margin-left 0.3s ease; /* Smooth transition */
 }
 
 .dashboard-header {
@@ -338,38 +337,22 @@ a {
   margin-right: 8px;
 }
 
-/* Cards Section */
-.dashboard-cards {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+.neumorphic-card {
+  background: #ececec !important; 
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px #a3a3a3, 
+              -8px -8px 15px #ffffff; 
+  transition: all 0.3s ease;
 }
 
-.dashboard-cards .card {
-  flex: 1;
-  padding: 1rem;
-  background: var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
+.neumorphic-card:hover {
+  box-shadow: 4px 4px 10px #a3a3a3, 
+              -4px -4px 10px #ffffff; 
 }
 
-.dashboard-cards .card h5 {
-  font-size: 16px;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
 
-.dashboard-cards .card h2 {
-  font-size: 32px;
-  color: var(--black);
-  margin: 0;
-}
 
-.dashboard-cards .card svg {
-  margin-top: 10px;
-  color: var(--primary);
-}
+
 
 /* Table Section */
 .dashboard-tables {
@@ -405,6 +388,29 @@ a {
 .dashboard-tables td {
   color: var(--black);
 }
+
+
+.view-all {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  margin: 10px 5px;
+ margin-left: 1740px;
+}
+
+.view-all:hover {
+  color: #000000 ;
+  background-color: #b9d0f4;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -442,7 +448,7 @@ a {
 }
   
 
-  .sidebar {
+  /* .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -469,4 +475,28 @@ a {
     z-index: 1049;
   }
 
-  
+   */
+
+
+   .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide sidebar off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: var(--primary); /* Change to your desired background color */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.sidebar.open {
+    margin-left: 250px; /* Show sidebar */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}

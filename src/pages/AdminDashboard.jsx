@@ -14,9 +14,9 @@ const employeeData = [
   { id: 4, name: 'Sarah Williams', department: 'Finance', status: 'Pending', lastpayslip: '25/02/25' },
 ];
 
-const Dashboard = () => {
+const Dashboard = ({ sidebarOpen }) => {
   return (
-    <div className="  dashboard-container ">
+    <div className={`dashboard-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 className="h1 fw-bold">Welcome Admin Sarah</h1>
         <div className="d-flex align-items-center">
@@ -26,13 +26,29 @@ const Dashboard = () => {
       </div>
 
       <Row className="g-3">
-        <Col md={3}><Card className="p-3"><Card.Body><h5>Total Employees</h5><h2>142</h2><Users /></Card.Body></Card></Col>
-        <Col md={3}><Card className="p-3"><Card.Body><h5>Pending Payslips</h5><h2>300</h2><LineChartIcon/></Card.Body></Card></Col>
+        <Col md={3}>
+          <Card className="neumorphic-card p-3">
+            <Card.Body>
+              <h5>Total Employees</h5>
+              <h2>142</h2>
+              <Users />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={3}>
+          <Card className="neumorphic-card p-3">
+            <Card.Body>
+              <h5>Pending Payslips</h5>
+              <h2>300</h2>
+              <LineChartIcon />
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
 
       <Row className="mt-4">
         <Col lg={12}>
-          <Card className="p-3">
+          <Card className="neumorphic-card p-3">
             <Card.Body>
               <h5>Recent Employees</h5>
               <Table striped bordered hover size="sm">
@@ -57,6 +73,7 @@ const Dashboard = () => {
               </Table>
             </Card.Body>
           </Card>
+          <button className='view-all'>View All</button>
         </Col>
       </Row>
     </div>
