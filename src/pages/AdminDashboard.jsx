@@ -6,16 +6,23 @@ import {
   Calendar,
   LineChartIcon
 } from 'lucide-react';
+import PageWrapper from '../components/PageWrapper';
 
 const employeeData = [
   { id: 1, name: 'John Doe', department: 'Engineering', status: 'Active', lastpayslip: '25/02/25' },
   { id: 2, name: 'Jane Smith', department: 'Marketing', status: 'Pending', lastpayslip: '25/02/25' },
   { id: 3, name: 'Michael Johnson', department: 'HR', status: 'Active', lastpayslip: '25/02/25' },
   { id: 4, name: 'Sarah Williams', department: 'Finance', status: 'Pending', lastpayslip: '25/02/25' },
+  { id: 1, name: 'John Doe', department: 'Engineering', status: 'Active', lastpayslip: '25/02/25' },
+  { id: 2, name: 'Jane Smith', department: 'Marketing', status: 'Pending', lastpayslip: '25/02/25' },
+  { id: 3, name: 'Michael Johnson', department: 'HR', status: 'Active', lastpayslip: '25/02/25' },
+  { id: 4, name: 'Sarah Williams', department: 'Finance', status: 'Pending', lastpayslip: '25/02/25' },
+  
 ];
 
 const Dashboard = ({ sidebarOpen }) => {
   return (
+    <PageWrapper>
     <div className={`dashboard-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 className="h1 fw-bold">Welcome Admin Sarah</h1>
@@ -77,7 +84,12 @@ const Dashboard = ({ sidebarOpen }) => {
         </Col>
       </Row>
     </div>
+    </PageWrapper>
   );
 };
 
 export default Dashboard;
+
+
+
+

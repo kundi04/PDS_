@@ -6,31 +6,55 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Employees from "./pages/Employees";
+
+
+
 
 const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = (state) => {
+    setIsSidebarOpen((prevState) => (state !== undefined ? state : !prevState));
   };
 
-  const showLayout = location.pathname === "/admin-dashboard";
+  const showLayout = location.pathname.startsWith("/admin-dashboard") || location.pathname.startsWith("/employees");
+
+
+  const handleClick = (e) => {
+    // Close only if click is outside the sidebar
+    if (isSidebarOpen && !e.target.closest('.sidebar')) {
+      setIsSidebarOpen(false);
+    }
+  };
 
   return (
-    <div className="app-container">
+    <div className="app-container" onClick={handleClick}>
       {showLayout && <Navbar toggleSidebar={toggleSidebar} />}
-      {showLayout && <Sidebar open={isSidebarOpen} toggleSidebar={toggleSidebar} />}
-      <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
+      {showLayout && (
+        <Sidebar
+          open={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+        />
+      )}
+      <div
+        className={`content ${isSidebarOpen ? 'content-shift' : ''}`}
+      >
         <Routes>
+        <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/employees" element={<Employees sidebarOpen={isSidebarOpen} />} />
+
         </Routes>
+       
       </div>
     </div>
   );
 };
+
 
 const App = () => {
   return (

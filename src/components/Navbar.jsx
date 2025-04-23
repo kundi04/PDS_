@@ -12,9 +12,9 @@ const Navbar = ({ toggleSidebar }) => {
   return (
     <BootstrapNavbar expand="lg" className="border-bottom px-4 py-2 navbar">
       <div className="d-flex align-items-center">
-        <Button variant="light" className="me-2" onClick={toggleSidebar}>
-          <AlignJustify size={24} />
-        </Button>
+      <Button variant="light" className="me-2" onClick={toggleSidebar}>
+  <AlignJustify size={24} />
+</Button>
         <img src="/images/omni_logo_white.png" alt="Logo" className="admin-logo" />
       </div>
       <Nav className="ms-auto d-flex align-items-center">
