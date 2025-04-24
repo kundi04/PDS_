@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Employees from "./pages/Employees";
+import EmployeeDashboard from "./pages/EmployeeDashboard";
 
 
 
@@ -46,6 +47,7 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
           <Route path="/employees" element={<Employees sidebarOpen={isSidebarOpen} />} />
 
         </Routes>

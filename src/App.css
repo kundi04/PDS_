@@ -556,3 +556,120 @@ a {
   box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
   background: #e0e0e0;
 }
+
+
+/* 
+employee dashboard */
+
+.employee-dashboard {
+  margin-top: 50px;
+  min-height: 100vh;
+  color: #000;
+ 
+}
+
+.employee-dashboard h2,p{
+  padding-left: 40px;
+}
+
+.dashboard-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.greeting{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+
+.neumorphic-card {
+  background-color: hsl(220, 20%, 95%);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #b2b2b2, 
+              -10px -10px 20px #ffffff;
+  color: black;
+}
+
+#att-card{
+  height: 30vh;
+  width: 30%;
+  margin-left: 850px;
+  text-align: left;
+}
+
+
+#payslip-card{
+  height: 20vh;
+  width: 25%;
+  margin-left: 20px;
+  margin-top: -300px;
+
+}
+
+.neumorphic-button {
+  background: hsl(220, 20%, 95%);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 4px 4px 8px #b2b2b2, 
+              -4px -4px 8px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-button:hover {
+  background-color: #e0e0e0;
+}
+
+.view-all-btn {
+  background-color: var(--primary) !important;
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 4px 4px 10px #b2b2b2, 
+              -4px -4px 10px #ffffff;
+}
+
+.view-all-btn:hover {
+  background: #ccc;
+}
+
+.empl-btn1{
+  background-color: var(--primary) !important;
+
+  .empl-btn1:hover{
+    background-color: var(--white) !important;
+  }
+}
+
+
+.modal-backdrop {
+  z-index: 1050 !important;
+}
+
+.modal {
+  z-index: 1100 !important;
+}
+
+
+.color-empty {
+  fill: #ebedf0;
+}
+.color-gitlab-1 {
+  fill: #9be9a8;
+}
+.color-gitlab-2 {
+  fill: #40c463;
+}
+.color-gitlab-3 {
+  fill: #30a14e;
+}
+.color-gitlab-4 {
+  fill: #216e39;
+}
