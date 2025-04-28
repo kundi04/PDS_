@@ -15,14 +15,14 @@ const Navbar = ({ toggleSidebar }) => {
       <Button variant="light" className="me-2" onClick={toggleSidebar}>
   <AlignJustify size={24} />
 </Button>
-        <img src="/images/omni_logo_white.png" alt="Logo" className="admin-logo" />
+        <img src="/images/omni_logo_white.png" alt="Logo" className=" admin-logo" />
       </div>
       <Nav className="ms-auto d-flex align-items-center">
         <Form className="d-none d-md-flex position-relative me-3">
           <Search className="position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" size={20} />
           <FormControl type="text" placeholder="Search..." className="ps-5" />
         </Form>
-        <Dropdown align="end">
+        <Dropdown align="end" className="notification">
           <Dropdown.Toggle as={Button} variant="light" className="position-relative">
             <Bell size={24} />
             <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
@@ -39,7 +39,7 @@ const Navbar = ({ toggleSidebar }) => {
             ))}
           </Dropdown.Menu>
         </Dropdown>
-        <Dropdown align="end" className="ms-3">
+        <Dropdown align="end" className="ms-3 account">
           <Dropdown.Toggle as={Button} variant="light" className="p-0">
             <img src="https://github.com/shadcn.png" alt="HR Pic" className="rounded-circle" width={40} height={40} />
           </Dropdown.Toggle>
