@@ -21,7 +21,21 @@ const Login = () => {
       console.log("Invalid credentials");
       alert("Invalid email or password");
     }
+
+
+    if (email === "sarah@employee.com" && password === "sarah2020_") {
+      console.log("Employee logged in");
+      navigate("/employee-dashboard"); 
+    } else {
+      console.log("Invalid credentials");
+      alert("Invalid email or password");
+    }
+
   };
+
+  
+
+
 
   return (
     <Container fluid className="login-container">

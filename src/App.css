@@ -25,6 +25,31 @@ body, html {
 }
 
 
+#live-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(90deg, rgba(42, 123, 155, 0.5) 0%, rgb(147, 198, 208) 50%, rgb(83, 237, 227) 100%); */
+  opacity: 0,5;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -9999; 
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* Left side styling */
 .login-left, .login-right {
@@ -306,6 +331,14 @@ a {
   margin-left: 20px;
 }
 
+@media (max-width: 768px) {
+  .notification, .account{
+    display: none;
+  }
+  
+}
+
+
 /* Admin Dashboard Styles */
 .dashboard-container {
   padding: 20px;
@@ -467,7 +500,7 @@ a {
   }
   
 
-  .content-shift {
+  .content-shift{
     margin-left: 250px; 
     transition: margin-left 0.3s ease;
   }
@@ -555,4 +588,270 @@ a {
   border-radius: 10px;
   box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
   background: #e0e0e0;
+}
+
+
+/* 
+employee dashboard */
+
+/* Base styles - existing CSS */
+.employee-dashboard {
+  margin-top: 50px;
+  min-height: 100vh;
+  color: #000;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.dashboard-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.greeting {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.neumorphic-card {
+  background-color: hsl(220, 20%, 95%);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #b2b2b2, 
+              -10px -10px 20px #ffffff;
+  color: black;
+}
+
+#att-card {
+  height: 30vh;
+  width: 30%;
+  margin-left: 600px;
+  text-align: left;
+}
+
+.div-one h2 {
+  padding-left: 45px;
+}
+
+#payslip-card {
+  height: 20vh;
+  width: 25%;
+  margin-left: 20px;
+  margin-top: -250px;
+}
+
+.neumorphic-button {
+  background: hsl(220, 20%, 95%);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 4px 4px 8px #b2b2b2, 
+              -4px -4px 8px #ffffff;
+  transition: all 0.3s ease;
+}
+
+
+
+.view-all-btn {
+  background-color: var(--primary) !important;
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+
+}
+
+
+
+.empl-btn1 {
+  background-color: var(--primary) !important;
+}
+
+
+
+.modal-backdrop {
+  z-index: 1050 !important;
+}
+
+.modal {
+  z-index: 1100 !important;
+}
+
+.color-empty {
+  fill: #ebedf0;
+}
+.color-gitlab-1 {
+  fill: #9be9a8;
+}
+.color-gitlab-2 {
+  fill: #40c463;
+}
+.color-gitlab-3 {
+  fill: #30a14e;
+}
+.color-gitlab-4 {
+  fill: #216e39;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--primary);
+  z-index: 1030;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  padding: 20px 10px;
+  color: #fff;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.content {
+  transition: margin-left 0.3s ease;
+}
+
+.content-shift {
+  margin-left: 250px;
+}
+
+/* Media query for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Layout adjustments */
+  .content-shift {
+    margin-left: 0;
+  }
+  
+  .div-one {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .div-one h2 {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  #att-card {
+    width: 90%;
+    margin-left: 20px;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .greeting {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  #payslip-card {
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: auto;
+    min-height: 150px;
+  }
+  
+  .previous-payslips {
+    overflow-x: auto;
+  }
+  
+  /* Table adjustments */
+  .table {
+    min-width: 600px;
+  }
+  
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 240px;
+    left: -240px;
+  }
+}
+
+/* Media query for mobile phones (max-width: 414px) */
+@media (max-width: 414px) {
+  .employee-dashboard {
+    margin-top: 30px;
+  }
+  
+  .div-one h2 {
+    padding-left: 15px;
+    font-size: 24px;
+  }
+  
+  #att-card {
+    width: 90%;
+    margin-left: 15px;
+    padding: 15px;
+  }
+  
+  #payslip-card {
+    width: 90%;
+    margin-left: 15px;
+    padding: 15px;
+  }
+  
+  .greeting {
+    padding: 10px;
+  }
+  
+  .neumorphic-card {
+    box-shadow: 6px 6px 12px #b2b2b2, 
+                -6px -6px 12px #ffffff;
+  }
+  
+  .previous-payslips {
+    padding: 0 15px;
+  }
+  
+  /* Button adjustments */
+  .neumorphic-button, .view-all-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  /* Modal adjustments */
+  .modal-body {
+    padding: 15px;
+  }
+  
+  /* Sidebar adjustments for mobile */
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  
+  /* Make the sidebar take the full width on mobile */
+  .sidebar.open {
+    left: 0;
+    width: 100%;
+  }
+  
+  /* Make popup more mobile-friendly */
+  .popup-card {
+    width: 90%;
+    max-width: none;
+    margin: 0 auto;
+  }
+  
+  .popup-overlay {
+    padding: 0 10px;
+  }
+}
+
+/* Additional styles for table responsiveness */
+@media (max-width: 768px) {
+  .previous-payslips {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
