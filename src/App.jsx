@@ -8,7 +8,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Employees from "./pages/Employees";
 import EmployeeDashboard from "./pages/EmployeeDashboard";
-
+import Background from "./components/Background";
 
 
 
@@ -31,6 +31,7 @@ const AppContent = () => {
   };
 
   return (
+   
     <div className="app-container" onClick={handleClick}>
       {showLayout && <Navbar toggleSidebar={toggleSidebar} />}
       {showLayout && (
@@ -39,9 +40,10 @@ const AppContent = () => {
           toggleSidebar={toggleSidebar}
         />
       )}
+    
       <div
         className={`content ${isSidebarOpen ? 'content-shift' : ''}`}
-      >
+    >
         <Routes>
         <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />

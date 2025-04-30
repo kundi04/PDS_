@@ -27,7 +27,9 @@ const EmployeeDashboard = () => {
             <div className="neumorphic-card mb-4" id="att-card">
               <h5 className="fw-bold fs-1">May 2025 Payslip</h5>
               <p className='fs-5'>View your payslip for the month of May 2025</p>
-              <Button className="neumorphic-button btn-sm empl-btn1">View Full Details</Button>
+              <Button className="neumorphic-button btn-sm empl-btn1" onClick={handleShow}>
+                View Full Details
+              </Button>
             </div>
           </div>
 
@@ -35,9 +37,8 @@ const EmployeeDashboard = () => {
             <div className="neumorphic-card mb-4" id="payslip-card">
               <h5 className="fw-bold">May 2025 Attendance Report</h5>
               <p>Calendar showing your attendance report</p>
-              <Button className="neumorphic-button btn-sm empl-btn1" onClick={handleShow}>
-                View Full Details
-              </Button>
+
+              <Button className="neumorphic-button btn-sm empl-btn1">View Full Details</Button>
             </div>
           </div>
 
